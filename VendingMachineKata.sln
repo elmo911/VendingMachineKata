@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine", "VendingMachine\VendingMachine.csproj", "{90A93658-44A5-429B-87ED-492138D70274}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingService", "VendingService\VendingService.csproj", "{90A93658-44A5-429B-87ED-492138D70274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingServiceUnitTests", "VendingServiceUnitTests\VendingServiceUnitTests.csproj", "{64D9AD9C-651E-48AB-BF87-B877C009378A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{90A93658-44A5-429B-87ED-492138D70274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90A93658-44A5-429B-87ED-492138D70274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90A93658-44A5-429B-87ED-492138D70274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D9AD9C-651E-48AB-BF87-B877C009378A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D9AD9C-651E-48AB-BF87-B877C009378A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D9AD9C-651E-48AB-BF87-B877C009378A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D9AD9C-651E-48AB-BF87-B877C009378A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
