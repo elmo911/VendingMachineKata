@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingService", "VendingSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingServiceUnitTests", "VendingServiceUnitTests\VendingServiceUnitTests.csproj", "{64D9AD9C-651E-48AB-BF87-B877C009378A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineUi", "VendingMachineUi\VendingMachineUi.csproj", "{D64D5B52-2584-44C9-A95E-DE1BF1A584F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{64D9AD9C-651E-48AB-BF87-B877C009378A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64D9AD9C-651E-48AB-BF87-B877C009378A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64D9AD9C-651E-48AB-BF87-B877C009378A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64D5B52-2584-44C9-A95E-DE1BF1A584F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64D5B52-2584-44C9-A95E-DE1BF1A584F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64D5B52-2584-44C9-A95E-DE1BF1A584F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64D5B52-2584-44C9-A95E-DE1BF1A584F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
