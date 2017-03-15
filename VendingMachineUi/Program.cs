@@ -53,7 +53,8 @@ namespace VendingMachineUi
             }
             catch (OutOfStockException)
             {
-                Console.WriteLine("We do not have this product at this time.");
+                Console.WriteLine("SOLD OUT");
+                Console.WriteLine($"SUBTOTAL: {VendingMachine.Subtotal}");
                 return false;
             }
             catch (NotEnoughFundsException exception)
