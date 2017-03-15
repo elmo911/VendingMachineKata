@@ -32,9 +32,10 @@ namespace VendingMachineUi
             Console.WriteLine("Purchase a $1.00 Cola, $0.65 Candy, or $0.50 Chips?");
             Console.WriteLine("Which would you like?");
             var product = Console.ReadLine();
+            var change = 0M;
             try
             {
-                VendingMachine.SelectProduct(product);
+                change = VendingMachine.SelectProduct(product);
             }
             catch (OutOfStockException)
             {
@@ -47,6 +48,8 @@ namespace VendingMachineUi
                 return false;
             }
             Console.WriteLine("THANK YOU");
+            if(change>0)
+                Console.WriteLine($"Please take your change: ${change}");
             return true;
         }
 

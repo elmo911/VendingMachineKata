@@ -12,7 +12,7 @@ namespace VendingService
         }
 
 
-        public bool SelectProduct(string productName)
+        public decimal SelectProduct(string productName)
         {
             var inventory = new ProductInventory();
             if (!inventory.InStock(productName))
@@ -20,10 +20,16 @@ namespace VendingService
             var requiredFunds = inventory.ProductPrice(productName);
             if (requiredFunds > Subtotal)
                 throw new NotEnoughFundsException(requiredFunds);
-            Subtotal = 0;
-            return true;
+            Subtotal -= requiredFunds;
+            return DispenseChange();
         }
 
-        
+
+        public decimal DispenseChange()
+        {
+            var change = Subtotal;
+            Subtotal = 0;
+            return change;
+        }
     }
 }

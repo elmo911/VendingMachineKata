@@ -65,10 +65,7 @@ namespace VendingMachineUnitTests
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
             vendingMachine.InsertCoin(dime.Size, dime.Weight);
             vendingMachine.InsertCoin(nickle.Size, nickle.Weight);
-            var recievedProduct = vendingMachine.SelectProduct("Candy");
-
-            //Assert
-            Assert.True(recievedProduct);
+            vendingMachine.SelectProduct("Candy");
         }
 
         [Fact]
@@ -81,10 +78,7 @@ namespace VendingMachineUnitTests
             //Act
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
-            var recievedProduct = vendingMachine.SelectProduct("Chips");
-
-            //Assert
-            Assert.True(recievedProduct);
+            vendingMachine.SelectProduct("Chips");
         }
 
         [Fact]
@@ -99,10 +93,7 @@ namespace VendingMachineUnitTests
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
-            var recievedProduct = vendingMachine.SelectProduct("Cola");
-
-            //Assert
-            Assert.True(recievedProduct);
+            vendingMachine.SelectProduct("Cola");
         }
 
         [Fact]
@@ -145,10 +136,7 @@ namespace VendingMachineUnitTests
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
             vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
-            var recievedProduct = vendingMachine.SelectProduct("Candy");
-
-            //Assert
-            Assert.True(recievedProduct);
+            vendingMachine.SelectProduct("Candy");
         }
 
         [Fact]
@@ -161,5 +149,41 @@ namespace VendingMachineUnitTests
             //Assert
             Assert.Throws<OutOfStockException>(() => vendingMachine.SelectProduct("Fake Candy"));
         }
+
+        [Fact]
+        public void SelectProduct_ChangeLeft_ReturnsChange()
+        {
+            //Arrange
+            var vendingMachine = new VendingMachine();
+            var quarter = Coins.Quarter;
+
+            //Act
+            vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
+            vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
+            vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
+            vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
+            vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
+            var change = vendingMachine.SelectProduct("Cola");
+
+            //Assert
+            Assert.Equal(change, .25M);
+        }
+
+        [Fact]
+        public void ReturnChange_ReturnsChange()
+        {
+            //Arrange
+            var vendingMachine = new VendingMachine();
+            var quarter = Coins.Quarter;
+
+            //Act
+            vendingMachine.InsertCoin(quarter.Size, quarter.Weight);
+            var change = vendingMachine.DispenseChange();
+
+            //Assert
+            Assert.Equal(change, .25M);
+        }
+
+        
     }
 }
