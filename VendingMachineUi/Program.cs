@@ -21,10 +21,24 @@ namespace VendingMachineUi
                     Console.WriteLine("Put in a Penny, Nickle, Dime, Or Quarter?");
                     while (InsertCoin()) { }
                     productBought = BuyProduct();
+                    if (!productBought)
+                    {
+                        AskIfWantsChangeBack();
+                    }
+                    
                 }
             }
             
             
+        }
+
+        private static void AskIfWantsChangeBack()
+        {
+            Console.WriteLine("Return your coins? (Y, N)");
+            var returnCoins = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+            if (returnCoins == 'Y' || returnCoins == 'y')
+                Console.WriteLine($"Your change is ${VendingMachine.DispenseChange()}");
         }
 
         private static bool BuyProduct()
