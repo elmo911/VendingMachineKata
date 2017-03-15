@@ -11,6 +11,19 @@ namespace VendingService
             Subtotal += CoinSensor.GetCoinValue(size, weight);
         }
 
+
+        public bool SelectProduct(string productName)
+        {
+            var inventory = new ProductInventory();
+            if (!inventory.InStock(productName))
+                throw new OutOfStockException();
+            var requiredFunds = inventory.ProductPrice(productName);
+            if (requiredFunds > Subtotal)
+                throw new NotEnoughFundsException(requiredFunds);
+            Subtotal = 0;
+            return true;
+        }
+
         
     }
 }

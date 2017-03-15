@@ -12,13 +12,42 @@ namespace VendingMachineUi
         public static VendingMachine VendingMachine = new VendingMachine();
         static void Main(string[] args)
         {
-            Console.WriteLine("INSERT COIN");
-            Console.WriteLine("Put in a Penny, Nickle, Dime, Or Quarter?");
-            while (InsertCoin())
+            while (true)
             {
-                
+                var productBought = false;
+                while (!productBought)
+                {
+                    Console.WriteLine("INSERT COIN");
+                    Console.WriteLine("Put in a Penny, Nickle, Dime, Or Quarter?");
+                    while (InsertCoin()) { }
+                    productBought = BuyProduct();
+                }
             }
             
+            
+        }
+
+        private static bool BuyProduct()
+        {
+            Console.WriteLine("Purchase a $1.00 Cola, $0.65 Candy, or $0.50 Chips?");
+            Console.WriteLine("Which would you like?");
+            var product = Console.ReadLine();
+            try
+            {
+                VendingMachine.SelectProduct(product);
+            }
+            catch (OutOfStockException)
+            {
+                Console.WriteLine("We do not have this product at this time.");
+                return false;
+            }
+            catch (NotEnoughFundsException exception)
+            {
+                Console.WriteLine($"PRICE ${exception.ExpectedPrice}");
+                return false;
+            }
+            Console.WriteLine("THANK YOU");
+            return true;
         }
 
         private static bool InsertCoin()

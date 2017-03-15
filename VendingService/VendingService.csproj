@@ -42,9 +42,14 @@
   <ItemGroup>
     <Compile Include="CoinSensor.cs" />
     <Compile Include="InvalidCoinException.cs" />
+    <Compile Include="Models\VendingProduct.cs" />
+    <Compile Include="NotEnoughFundsException.cs" />
+    <Compile Include="OutOfStockException.cs" />
+    <Compile Include="ProductInventory.cs" />
     <Compile Include="VendingMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
